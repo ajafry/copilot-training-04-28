@@ -31,7 +31,6 @@ def _backspace() -> None:
     st.session_state.calc_expr = st.session_state.calc_expr[:-1]
     st.session_state.calc_result = ""
 
-
 def _evaluate() -> None:
     expr = st.session_state.calc_expr
     if not expr or not all(ch in ALLOWED_CHARS for ch in expr):
@@ -42,6 +41,7 @@ def _evaluate() -> None:
         st.session_state.calc_result = str(result)
     except Exception:
         st.session_state.calc_result = "Error"
+
 
 
 def render() -> None:

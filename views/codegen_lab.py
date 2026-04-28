@@ -13,7 +13,7 @@ import streamlit as st
 
 def reverse_string(text: str) -> str:
     """Return the reverse of the given string."""
-    pass
+    return text[::-1]
 
 
 def is_palindrome(text: str) -> bool:
@@ -21,7 +21,8 @@ def is_palindrome(text: str) -> bool:
 
     Ignore case and non-alphanumeric characters.
     """
-    pass
+    cleaned = ''.join(char.lower() for char in text if char.isalnum())
+    return cleaned == cleaned[::-1]
 
 
 def fizzbuzz(n: int) -> list[str]:
@@ -32,12 +33,22 @@ def fizzbuzz(n: int) -> list[str]:
     - Multiples of both → 'FizzBuzz'
     - Otherwise → the number as a string
     """
-    pass
+    result = []
+    for i in range(1, n + 1):
+        if i % 3 == 0 and i % 5 == 0:
+            result.append("FizzBuzz")
+        elif i % 3 == 0:
+            result.append("Fizz")
+        elif i % 5 == 0:
+            result.append("Buzz")
+        else:
+            result.append(str(i))
+    return result
 
 
 def celsius_to_fahrenheit(celsius: float) -> float:
     """Convert a temperature from Celsius to Fahrenheit."""
-    pass
+    return (celsius * 9/5) + 32
 
 
 def count_vowels(text: str) -> int:
@@ -45,13 +56,19 @@ def count_vowels(text: str) -> int:
 
     Case-insensitive.
     """
-    pass
+    vowels = "aeiou"
+    return sum(1 for char in text.lower() if char in vowels)
 
 
 def find_max(numbers: list[int]) -> int:
     """Return the largest number in the list without using the built-in max()."""
-    pass
-
+    if not numbers:
+        raise ValueError("The list is empty.")
+    max_num = numbers[0]
+    for num in numbers[1:]:
+        if num > max_num:
+            max_num = num
+    return max_num
 
 # ---------------------------------------------------------------------------
 # Page rendering
