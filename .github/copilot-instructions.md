@@ -38,8 +38,14 @@
 ## Testing
 
 - Write tests using **pytest**.
+- Use the test folder to organize tests by module or feature.
 - Name test files `test_<module>.py` and test functions `test_<behavior>`.
 - Each test should be independent and test a single behavior.
+
+## Dependencies
+
+- Always ensure that you have activated the virtual environment that has been created.
+- Update requirements.txt as needed and install depedencies using 'uv pip install -r requirements.txt' command. 
 
 ## Documentation
 
