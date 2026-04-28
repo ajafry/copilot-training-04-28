@@ -87,3 +87,4 @@ def render() -> None:
                     else:
                         actual = OPERATOR_MAP.get(label, label)
                         st.button(label, key=f"btn_{label}", on_click=_append, args=(actual,), use_container_width=True)
+
