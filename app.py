@@ -1,6 +1,6 @@
 import streamlit as st
 
-from views import calculator, codegen_lab, home
+from views import calculator, codegen_lab, home, password_generator
 from views.styles import inject_styles, render_footer
 
 # ---------------------------------------------------------------------------
@@ -24,6 +24,7 @@ inject_styles()
 PAGE_HOME = "🏠 Home"
 PAGE_CALCULATOR = "🧮 Calculator"
 PAGE_CODEGEN = "💡 Code Generation Lab"
+PAGE_PASSWORD = "🔐 Password Generator"
 
 with st.sidebar:
     st.markdown(
@@ -42,7 +43,7 @@ with st.sidebar:
     )
     page = st.radio(
         "Navigate",
-        [PAGE_HOME, PAGE_CALCULATOR, PAGE_CODEGEN],
+        [PAGE_HOME, PAGE_CALCULATOR, PAGE_CODEGEN, PAGE_PASSWORD],
         label_visibility="collapsed",
     )
 
@@ -55,6 +56,8 @@ elif page == PAGE_CALCULATOR:
     calculator.render()
 elif page == PAGE_CODEGEN:
     codegen_lab.render()
+elif page == PAGE_PASSWORD:
+    password_generator.render()
 
 # ---------------------------------------------------------------------------
 # Footer
